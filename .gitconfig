@@ -5,9 +5,14 @@
 [alias]
     ci = commit
     st = status
+    br = branch
+    co = checkout
+
     top = log --max-count=10 --pretty=format:'%C(yellow)%h %C(blue)%ar %C(red)%d %C(reset)%s'
     outgoing = log --pretty=oneline --abbrev-commit --graph @{u}..
     incoming = !git fetch && git log --pretty=oneline --abbrev-commit --graph ..@{u}
+    unstage = 'reset HEAD --'
+    last = 'log -1 HEAD'
 [push]
     default = simple
 [filter "hawser"]
