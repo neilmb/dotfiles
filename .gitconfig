@@ -1,0 +1,16 @@
+[user]
+    name = Neil Martinsen-Burrell
+    email = neil@moz.com
+
+[alias]
+    ci = commit
+    st = status
+    top = log --max-count=10 --pretty=format:'%C(yellow)%h %C(blue)%ar %C(red)%d %C(reset)%s'
+    outgoing = log --pretty=oneline --abbrev-commit --graph @{u}..
+    incoming = !git fetch && git log --pretty=oneline --abbrev-commit --graph ..@{u}
+[push]
+    default = simple
+[filter "hawser"]
+    clean = git hawser clean %f
+    smudge = git hawser smudge %f
+    required = true
