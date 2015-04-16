@@ -1,6 +1,6 @@
 # ~/.tmuxinator/moz.yml
 
-name: testall
+name: main
 root: ~/
 
 # Optional tmux socket

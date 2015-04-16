@@ -1,6 +1,6 @@
 # ~/.tmuxinator/moz.yml
 
-name: testall
+name: mozlinks
 root: ~/proj/mozlinks
 
 # Optional tmux socket

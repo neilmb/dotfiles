@@ -1,6 +1,6 @@
 # ~/.tmuxinator/moz.yml
 
-name: testall
+name: shiny
 root: ~/proj/shiny
 
 # Optional tmux socket
