@@ -14,7 +14,7 @@
     unstage = 'reset HEAD --'
     last = 'log -1 HEAD'
 [push]
-    default = simple
+    default = current
 [filter "hawser"]
     clean = git hawser clean %f
     smudge = git hawser smudge %f
