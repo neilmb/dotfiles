@@ -1,6 +1,9 @@
 [user]
-    name = Neil Martinsen-Burrell
-    email = neil@moz.com
+	name = Neil Martinsen-Burrell
+	email = neil@moz.com
+
+[core]
+	excludesfile = /Users/neil/.gitignore_global
 
 [alias]
     ci = commit
@@ -11,11 +14,24 @@
     top = log --max-count=10 --pretty=format:'%C(yellow)%h %C(blue)%ar %C(red)%d %C(reset)%s'
     outgoing = log --pretty=oneline --abbrev-commit --graph @{u}..
     incoming = !git fetch && git log --pretty=oneline --abbrev-commit --graph ..@{u}
-    unstage = 'reset HEAD --'
-    last = 'log -1 HEAD'
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    lg1 = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    lg2 = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
+    lg = !"git lg1"
 [push]
     default = current
 [filter "hawser"]
     clean = git hawser clean %f
     smudge = git hawser smudge %f
     required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
