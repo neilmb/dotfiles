@@ -1,9 +1,10 @@
 [user]
 	name = Neil Martinsen-Burrell
-	email = neil@moz.com
+	email = neil.martinsen-burrell@gsa.gov
 
 [core]
 	excludesfile = /Users/neil/.gitignore_global
+	hooksPath = /Users/neildmartinsenburrell/.git-support/hooks
 
 [alias]
     ci = commit
@@ -24,19 +25,12 @@
     dump = cat-file -p
 [push]
     default = current
-[filter "hawser"]
-    clean = git hawser clean %f
-    smudge = git hawser smudge %f
-    required = true
-[filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [color]
 	ui = auto
+[gitseekret]
+	version = 1
+	rulespath = /Users/neildmartinsenburrell/.git-support/seekret-rules
+	rulesenabled = aws.access_key_id,aws.account_id,aws.secret_access_key,mandrill.username,mandrill.password,mandrill.api_key,newrelic.license_key,slack.api_token,slack.webhook_url
+	exceptionsfile = ""
+[pull]
+	rebase = false
